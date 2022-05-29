@@ -79,7 +79,10 @@ export default function Command() {
                   title={"Change Explorer"}
                   onAction={() => handleExplorerChange(explorer)}
                 />
-                <Action.CopyToClipboard content={`https://${explorer.baseUrl}`} />
+                <Action.CopyToClipboard
+                  shortcut={{ modifiers: ["cmd"], key: "c" }}
+                  content={`https://${explorer.baseUrl}`}
+                />
               </ActionPanel>
             }
           />

@@ -72,8 +72,8 @@ export default function Command() {
           <Action.CreateQuicklink
             quicklink={{ link: match.path, name: `${match.explorer.chainName}: ${match.title} — ` }}
           />
-          <Action.CopyToClipboard title="Copy link to Clipboard" content={match.path} />
-          <Action.Paste title="Paste to Top Window" content={match.path} />
+          <Action.CopyToClipboard shortcut={{ modifiers: ["cmd"], key: "c" }} content={match.path} />
+          <Action.Paste shortcut={{ modifiers: ["cmd"], key: "v" }} content={match.path} />
         </ActionPanel>
       }
     />
