@@ -4,7 +4,6 @@ import { defaultExplorer, explorers } from "./explorers";
 import { Explorer } from "./interfaces";
 
 export default function Command() {
-  // Grab the clipboard contents and run a search
   const [selectedExplorer, setSelectedExplorer] = useState<Explorer | null>(null);
   useEffect(() => {
     const setFromStorage = async () => {
@@ -42,6 +41,11 @@ export default function Command() {
             icon: "✅",
             tooltip: "The explorer used in searches.",
           });
+        }
+        if (explorer?.testNet) {
+          keywords.push("testnet");
+        } else {
+          keywords.push("mainnet");
         }
         return (
           <List.Item
