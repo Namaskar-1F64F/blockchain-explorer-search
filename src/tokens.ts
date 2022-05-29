@@ -1,64 +1,6 @@
-interface Explorer {
-  title: string;
-  icon: string;
-  baseUrl: string;
-  chainId: number;
-}
-interface Token {
-  address: string;
-  chainId: number;
-  name: string;
-  symbol: string;
-  decimals: number;
-}
-const defaultExplorer = {
-  baseUrl: "etherscan.io",
-  title: "Etherscan Mainnet",
-  icon: "../assets/command-icon.png",
-  chainId: 1,
-};
+import { Token } from "./interfaces";
 
-const explorers: Explorer[] = [
-  { title: "Ethereum", baseUrl: "etherscan.io", icon: "../assets/command-icon.png", chainId: 1 },
-  {
-    title: "Ethereum — Ropsten",
-    baseUrl: "ropsten.etherscan.io",
-    icon: "../assets/command-icon.png",
-    chainId: 3,
-  },
-  {
-    title: "Ethereum — Rinkeby",
-    baseUrl: "rinkeby.etherscan.io",
-    icon: "../assets/command-icon.png",
-    chainId: 4,
-  },
-  {
-    title: "Ethereum — Goerli",
-    baseUrl: "goerli.etherscan.io",
-    icon: "../assets/command-icon.png",
-    chainId: 5,
-  },
-  { title: "Ethereum — Kovan", baseUrl: "kovan.etherscan.io", icon: "../assets/command-icon.png", chainId: 42 },
-  { title: "Optimism", baseUrl: "optimistic.etherscan.io", icon: "", chainId: 10 },
-  { title: "Optimism — Kovan", baseUrl: "kovan-optimistic.etherscan.io", icon: "", chainId: 69 },
-  { title: "BNB Smart Chain", baseUrl: "bscscan.com", icon: "", chainId: 56 },
-  { title: "BNB Smart Chain — Testnet", baseUrl: "testnet.bscscan.com", icon: "", chainId: 97 },
-  { title: "Hoo Smart Chain", baseUrl: "hooscan.com", icon: "", chainId: 70 },
-  { title: "Polygon", baseUrl: "polygonscan.com", icon: "", chainId: 137 },
-  { title: "Fantom", baseUrl: "ftmscan.com", icon: "", chainId: 250 },
-  { title: "Fantom — Testnet", baseUrl: "testnet.ftmscan.com", icon: "", chainId: 4002 },
-  { title: "Polygon — Mumbai", baseUrl: "polygonscan.com", icon: "", chainId: 80001 },
-  { title: "Avalanche C-Chain", baseUrl: "snowtrace.io", icon: "🏔️", chainId: 43114 },
-  { title: "Avalanche C-Chain — Fuji", baseUrl: "testnet.snowtrace.io", icon: "", chainId: 43113 },
-  { title: "BitTorrent Chain — Donau", baseUrl: "testnet.bttcscan.com", icon: "", chainId: 1028 },
-  { title: "BitTorrent Chain", baseUrl: "bttcscan.com", icon: "", chainId: 199 },
-  { title: "Aurora", baseUrl: "aurorascan.dev", icon: "", chainId: 1313161554 },
-  { title: "Aurora — Testnet", baseUrl: "testnet.aurorascan.dev", icon: "", chainId: 1313161555 },
-  { title: "Cleo Chain", baseUrl: "celoscan.xyz", icon: "", chainId: 0 },
-  { title: "Cleo — Alfajores", baseUrl: "alfajores.celoscan.xyz", icon: "", chainId: 0 },
-  { title: "CLV Chain", baseUrl: "clvscan.com", icon: "", chainId: 1024 },
-];
-const tokenLists: { [key: number]: Token[] } = {
+export const tokenLists: { [key: number]: Token[] } = {
   1: [
     {
       address: "0x006BeA43Baa3f7A6f765F14f10A1a1b08334EF45",
@@ -6971,6 +6913,3 @@ const tokenLists: { [key: number]: Token[] } = {
     },
   ],
 };
-
-export { defaultExplorer, explorers, tokenLists };
-export type { Explorer, Token };
