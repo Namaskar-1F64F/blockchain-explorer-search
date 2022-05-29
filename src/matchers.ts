@@ -134,7 +134,7 @@ export class BlockMatch extends Match {
     super(search, explorer);
   }
   get title() {
-    return `Block — Height ${this.parsedSearch}`;
+    return `Block height ${this.parsedSearch}`;
   }
   get path() {
     return `https://${this.explorer.baseUrl}/block/${this.parsedSearch}`;
